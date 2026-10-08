@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="TUMU DOG — a cute food-loving meme community on Solana.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<meta name="theme-color" content="#fff8df">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TUMU DOG">
+<meta property="og:title" content="TUMU DOG — $TUMU on Solana">
+<meta property="og:description" content="A cute food-loving meme community on Solana. Japan, food, memes and wholesome vibes.">
+<meta property="og:url" content="https://tonfun-creator.github.io/tumu-dog/">
+<meta property="og:image" content="https://tonfun-creator.github.io/tumu-dog/logo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@TUMUDOG1">
+<meta name="twitter:title" content="TUMU DOG — $TUMU on Solana">
+<meta name="twitter:description" content="A cute food-loving meme community on Solana.">
+<meta name="twitter:image" content="https://tonfun-creator.github.io/tumu-dog/logo.jpg">
 <title>TUMU DOG — $TUMU</title>
 <style>
 :root{
@@ -40,9 +54,17 @@ h2{font-size:34px;letter-spacing:-1.5px;margin:0 0 9px}h3{margin:0 0 8px}
 .token{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
 .item{padding:18px;border-radius:17px;background:#fffaf0;border:1px solid var(--line)}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.value{font-weight:850;margin-top:6px;word-break:break-word}
 .value a{color:var(--accent);text-decoration:underline}
-.social{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.social{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
 .social a{text-decoration:none;padding:22px;border-radius:20px;background:var(--ink);color:white;font-weight:900}
 .tt{margin-top:26px;display:flex;justify-content:center}.vsec{padding-top:0}.vid{width:100%;max-width:380px;max-height:80vh;border-radius:22px;background:#000;box-shadow:0 18px 60px #74542633}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.faq{margin-top:22px;display:grid;gap:10px}
+.faq details{background:#fffaf0;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.faq summary{font-weight:850;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:900;color:var(--accent);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:12px 0 0;color:var(--muted);line-height:1.65}
 .notice{font-size:13px;color:#705f4c;line-height:1.65;margin-top:22px}
 footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
 footer a{color:var(--ink);font-weight:700}
@@ -50,7 +72,7 @@ footer a{color:var(--ink);font-weight:700}
  .navlinks a:not(.pump){display:none}
  .hero{grid-template-columns:1fr;text-align:center;padding-top:35px}
  .lead{margin:auto}h1{letter-spacing:-4px}.actions{justify-content:center}
- .grid3,.steps,.token,.social{grid-template-columns:1fr}
+ .grid3,.steps,.steps4,.token,.social{grid-template-columns:1fr}
 }
 
 #chat-btn{position:fixed;right:18px;bottom:18px;z-index:50;width:60px;height:60px;border-radius:50%;border:2px solid var(--ink);background:var(--accent);color:#fff;font-size:28px;cursor:pointer;box-shadow:0 10px 30px #0003}
@@ -74,6 +96,8 @@ footer a{color:var(--ink);font-weight:700}
  <div class="navlinks">
   <a href="#rewards">Rewards</a>
   <a href="#token">Token</a>
+  <a href="#how-to-buy">How to Buy</a>
+  <a href="#faq">FAQ</a>
   <a href="#community">Community</a>
   <a class="pump" data-pump href="#token" target="_blank" rel="noopener noreferrer">Pump.fun</a>
  </div>
@@ -140,6 +164,38 @@ footer a{color:var(--ink);font-weight:700}
  </div>
 </section>
 
+<section id="how-to-buy">
+ <div class="card">
+  <h2>🛒 How to buy $TUMU</h2>
+  <p class="sub">New to crypto? Follow these 4 simple steps.</p>
+  <div class="steps4">
+   <div class="step"><div class="num">1</div><h3>Get a wallet</h3><p class="sub">Install a Solana wallet such as Phantom and keep your seed phrase private.</p></div>
+   <div class="step"><div class="num">2</div><h3>Get SOL</h3><p class="sub">Buy SOL on an exchange and send it to your wallet address.</p></div>
+   <div class="step"><div class="num">3</div><h3>Open Pump.fun</h3><p class="sub">Use only the official Pump.fun button on this website and connect your wallet.</p></div>
+   <div class="step"><div class="num">4</div><h3>Swap for $TUMU</h3><p class="sub">Enter the amount of SOL, confirm the swap and you are done. 🐶</p></div>
+  </div>
+  <div class="actions"><a class="btn pump" data-pump href="#token" target="_blank" rel="noopener noreferrer">BUY ON PUMP.FUN</a></div>
+  <p class="notice">Always check the link before connecting your wallet. Never share your seed phrase. This is not financial advice.</p>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="card">
+  <h2>❓ FAQ</h2>
+  <p class="sub">Quick answers to common questions.</p>
+  <div class="faq">
+   <details><summary>What is TUMU DOG?</summary><p>A cute, food-loving meme community on Solana built around Japanese food, wholesome vibes and internet culture.</p></details>
+   <details><summary>Where can I buy $TUMU?</summary><p>Only through the official Pump.fun button on this website. Always double-check you are on the right link.</p></details>
+   <details><summary>What is the trading pair?</summary><p>SOL, on the Solana network.</p></details>
+   <details><summary>How do the rewards work?</summary><p>Ranks 1–10 can receive 100 USDC and ranks 11–100 can receive 25 USDC, with a minimum qualifying purchase of 25 USDC. Final rules, dates and verification will be published before launch.</p></details>
+   <details><summary>What is the contract address?</summary><p>It will be posted on this website and on our official X account @TUMUDOG1. Never trust an address from anyone else.</p></details>
+   <details><summary>Is $TUMU a safe investment?</summary><p>No guarantees. $TUMU is a meme coin, not financial advice, and the price can go to zero. Only spend what you can afford to lose.</p></details>
+   <details><summary>How do I stay safe from scams?</summary><p>Never share your seed phrase or private key. Admins will never DM you first asking for funds. Only trust links on this site and our official X.</p></details>
+   <details><summary>Where can I contact the team?</summary><p>Message us on X (<a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">@TUMUDOG1</a>) or <a href="https://t.me/TUMUDOG1" target="_blank" rel="noopener noreferrer">Telegram</a>.</p></details>
+  </div>
+ </div>
+</section>
+
 <section id="community">
  <div class="card">
   <h2>🌸 Follow TUMU</h2>
@@ -147,6 +203,7 @@ footer a{color:var(--ink);font-weight:700}
   <div class="social">
    <a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">𝕏 &nbsp; Follow on X</a>
    <a href="https://www.tiktok.com/@tumu_japanfood" target="_blank" rel="noopener noreferrer">♪ &nbsp; Follow on TikTok</a>
+   <a href="https://t.me/TUMUDOG1" target="_blank" rel="noopener noreferrer">✈ &nbsp; Join Telegram</a>
   </div>
   <h3 style="margin-top:28px">🎬 Latest TUMU video</h3>
   <div class="tt">
@@ -157,12 +214,12 @@ footer a{color:var(--ink);font-weight:700}
 </section>
 </main>
 
-<footer>© 2026 TUMU DOG • Meme community on Solana • Not financial advice<br><a href="privacy.html">Privacy Policy</a> • <a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">Support on X</a></footer>
+<footer>© 2026 TUMU DOG • Meme community on Solana • Not financial advice<br><a href="privacy.html">Privacy Policy</a> • <a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">Support on X</a> • <a href="https://t.me/TUMUDOG1" target="_blank" rel="noopener noreferrer">Telegram</a></footer>
 </div>
 
 <script>
 /* ====== SIRF YAHAN APNA PUMP.FUN LINK PASTE KARO ====== */
-var PUMP_URL = "https://pump.fun/";   // <-- apna token link yahan likho
+var PUMP_URL = "https://pump.fun/join/TUMUDOG1";
 /* ====================================================== */
 (function(){
   [].forEach.call(document.querySelectorAll('[data-pump]'),function(a){a.href=PUMP_URL});
@@ -195,7 +252,7 @@ var FAQ=[
  {k:['pair',' sol ','trade'],a:'The trading pair is SOL on the Solana network.'},
  {k:['contract','mint','address',' ca '],a:'The official contract/mint address will be posted here and on our official X account @TUMUDOG1. Never trust an address from anyone else.'},
  {k:['pump','where to buy','buy','launch','when'],a:'$TUMU is on Pump.fun. Use the "Pump.fun" button on this website, since that is the official link.'},
- {k:['tiktok',' x ','twitter','social','follow','links'],a:'Official accounts: X @TUMUDOG1 and TikTok @tumu_japanfood. Links are in the Follow TUMU section.'},
+ {k:['tiktok',' x ','twitter','telegram','social','follow','links'],a:'Official accounts: X @TUMUDOG1, Telegram t.me/TUMUDOG1 and TikTok @tumu_japanfood. Links are in the Follow TUMU section.'},
  {k:['verify','form','wallet','submit'],a:'The reward form is not live yet. When it opens you will submit your wallet and transaction details. We will NEVER ask for your seed phrase or private key.'},
  {k:['seed','private','phrase','scam','safe',' dm '],a:'Warning: never share your seed phrase or private key with anyone. Admins will never DM you first asking for funds. Only trust links on this site and our official X.'},
  {k:['profit','price','moon','invest','financial'],a:'$TUMU is a meme coin, not financial advice. Prices can go to zero. Only spend what you can afford to lose.'},
@@ -205,7 +262,7 @@ var FAQ=[
 var chat=document.getElementById('chat'),msgs=document.getElementById('msgs'),inp=document.getElementById('chatin'),chips=document.getElementById('chips');
 function add(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
 function answer(q){q=' '+q.toLowerCase().replace(/[^a-z0-9$@ ]/g,' ')+' ';var best=null,sc=0;FAQ.forEach(function(f){var n=0;f.k.forEach(function(w){if(q.indexOf(w)>-1)n++});if(n>sc){sc=n;best=f}});
- return best?best.a:'I am an automated helper and do not have an answer for that. Please message our team on X: https://x.com/TUMUDOG1'}
+ return best?best.a:'I am an automated helper and do not have an answer for that. Please message our team on X: https://x.com/TUMUDOG1 or Telegram: https://t.me/TUMUDOG1'}
 function ask(q){if(!q.trim())return;add(q,'me');setTimeout(function(){add(answer(q),'bot')},250)}
 ['Rewards','Minimum buy','Contract address','Official links'].forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){ask(t)};chips.appendChild(b)});
 document.getElementById('chat-btn').onclick=function(){chat.classList.toggle('open');if(!msgs.children.length)add('Hi! 🐶 I am the TUMU helper (automated). How can I help?','bot')};
@@ -214,4 +271,4 @@ document.getElementById('chatform').onsubmit=function(e){e.preventDefault();ask(
 })();
 </script>
 </body>
-</html>
+ </html>
