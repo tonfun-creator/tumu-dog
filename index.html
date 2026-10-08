@@ -39,6 +39,7 @@ h2{font-size:34px;letter-spacing:-1.5px;margin:0 0 9px}h3{margin:0 0 8px}
 .item{padding:18px;border-radius:17px;background:#fffaf0;border:1px solid var(--line)}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.value{font-weight:850;margin-top:6px;word-break:break-word}
 .social{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
 .social a{text-decoration:none;padding:22px;border-radius:20px;background:var(--ink);color:white;font-weight:900}
+.tt{margin-top:26px;display:flex;justify-content:center}.vsec{padding-top:0}.vid{width:100%;max-width:380px;max-height:80vh;border-radius:22px;background:#000;box-shadow:0 18px 60px #74542633}
 .notice{font-size:13px;color:#705f4c;line-height:1.65;margin-top:22px}
 footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
 @media(max-width:780px){
@@ -46,6 +47,20 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
  .lead{margin:auto}h1{letter-spacing:-4px}.actions{justify-content:center}
  .grid3,.steps,.token,.social{grid-template-columns:1fr}
 }
+
+#chat-btn{position:fixed;right:18px;bottom:18px;z-index:50;width:60px;height:60px;border-radius:50%;border:2px solid var(--ink);background:var(--accent);color:#fff;font-size:28px;cursor:pointer;box-shadow:0 10px 30px #0003}
+#chat{position:fixed;right:18px;bottom:90px;z-index:50;width:min(360px,calc(100vw - 36px));height:min(500px,70vh);display:none;flex-direction:column;background:var(--paper);border:2px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:0 20px 60px #0004}
+#chat.open{display:flex}
+#chat header{background:var(--ink);color:#fff;padding:14px 16px;font-weight:900;display:flex;justify-content:space-between;align-items:center}
+#chat header button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+#msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.5}
+.m{max-width:85%;padding:10px 13px;border-radius:16px}.m.bot{background:#fff3cf;align-self:flex-start}.m.me{background:var(--ink);color:#fff;align-self:flex-end}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+#chips button{border:1px solid var(--line);background:#fffaf0;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:700;cursor:pointer}
+#chatform{display:flex;border-top:1px solid var(--line)}
+#chatform input{flex:1;border:0;padding:14px;font-size:14px;outline:0;background:transparent}
+#chatform button{border:0;background:var(--accent);color:#fff;font-weight:900;padding:0 18px;cursor:pointer}
+footer a{color:var(--ink);font-weight:700}
 </style>
 </head>
 <body>
@@ -69,6 +84,11 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
  <img class="hero-logo" src="logo.jpg" alt="TUMU Dog logo">
 </section>
 
+<section class="vsec">
+ <div class="tt"><video class="vid" src="tumu-video2.mp4" poster="logo.jpg" autoplay muted loop playsinline controls preload="auto"></video></div>
+ <div style="text-align:center;margin-top:16px"><button id="snd" type="button" class="btn">🔊 Tap for sound</button></div>
+</section>
+
 <section id="rewards">
  <div class="card">
   <h2>🎁 Launch Reward Campaign</h2>
@@ -76,7 +96,7 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
   <div class="grid3">
    <div class="stat"><div class="big">100 USDC</div><div class="sub">Eligible ranks 1–10</div></div>
    <div class="stat"><div class="big">25 USDC</div><div class="sub">Eligible ranks 11–100</div></div>
-   <div class="stat"><div class="big">2 USDC+</div><div class="sub">Minimum qualifying purchase</div></div>
+   <div class="stat"><div class="big">25 USDC+</div><div class="sub">Minimum qualifying purchase</div></div>
   </div>
   <p class="notice">Reward eligibility is subject to the final campaign rules and verification. A token purchase does not guarantee profit or token appreciation. Do not spend more than you can afford to lose.</p>
  </div>
@@ -87,7 +107,7 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
   <h2>How it works</h2>
   <div class="steps">
    <div class="step"><div class="num">1</div><h3>Follow</h3><p class="sub">Follow the official TUMU accounts on TikTok and X.</p></div>
-   <div class="step"><div class="num">2</div><h3>Buy</h3><p class="sub">Buy at least 2 USDC worth of $TUMU through the official token page.</p></div>
+   <div class="step"><div class="num">2</div><h3>Buy</h3><p class="sub">Buy at least 25 USDC worth of $TUMU through the official token page.</p></div>
    <div class="step"><div class="num">3</div><h3>Verify</h3><p class="sub">Submit your wallet and transaction details when the reward form goes live.</p></div>
   </div>
  </div>
@@ -101,7 +121,7 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
    <div class="item"><div class="label">Name</div><div class="value">Tumu Dog</div></div>
    <div class="item"><div class="label">Ticker</div><div class="value">$TUMU</div></div>
    <div class="item"><div class="label">Chain</div><div class="value">Solana</div></div>
-   <div class="item"><div class="label">Pair</div><div class="value">USDC / SOL</div></div>
+   <div class="item"><div class="label">Pair</div><div class="value">SOL</div></div>
    <div class="item"><div class="label">Contract / Mint</div><div class="value">Coming soon</div></div>
    <div class="item"><div class="label">Pump.fun</div><div class="value">Coming soon</div></div>
    <div class="item"><div class="label">Total Supply</div><div class="value">See official token page</div></div>
@@ -113,17 +133,64 @@ footer{padding:35px 0 55px;text-align:center;color:var(--muted);font-size:13px}
 <section id="community">
  <div class="card">
   <h2>🌸 Follow TUMU</h2>
-  <p class="sub">Follow our official accounts. TikTok link coming soon.</p>
+  <p class="sub">Follow our official accounts and watch the latest TUMU videos.</p>
   <div class="social">
    <a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">𝕏 &nbsp; Follow on X</a>
-   <a href="#" onclick="return false">♪ &nbsp; TikTok — Coming soon</a>
+   <a href="https://www.tiktok.com/@tumu_japanfood" target="_blank" rel="noopener noreferrer">♪ &nbsp; Follow on TikTok</a>
+  </div>
+  <h3 style="margin-top:28px">🎬 Latest TUMU video</h3>
+  <div class="tt">
+   <video class="vid" src="tumu-video.mp4" poster="logo.jpg" autoplay muted loop playsinline controls preload="auto"></video>
   </div>
   <p class="notice">The reward submission form and automated verification should be connected to a secure backend before accepting entries. This static GitHub Pages site is intentionally frontend-only for now.</p>
  </div>
 </section>
 </main>
 
-<footer>© 2026 TUMU DOG • Meme community on Solana • Not financial advice</footer>
+<footer>© 2026 TUMU DOG • Meme community on Solana • Not financial advice<br><a href="privacy.html">Privacy Policy</a> • <a href="https://x.com/TUMUDOG1" target="_blank" rel="noopener noreferrer">Support on X</a></footer>
 </div>
+
+<script>
+(function(){
+var vids=[].slice.call(document.querySelectorAll('video.vid')),snd=document.getElementById('snd'),on=false;
+function sound(v){on=v;vids.forEach(function(x){x.muted=!v;if(x.paused)x.play().catch(function(){})});snd.textContent=on?'🔇 Mute':'🔊 Tap for sound'}
+snd.addEventListener('click',function(e){e.stopPropagation();sound(!on)});
+var first=function(e){if(e.target===snd)return;if(!on)sound(true);['pointerdown','keydown'].forEach(function(t){document.removeEventListener(t,first)})};
+['pointerdown','keydown'].forEach(function(t){document.addEventListener(t,first)});
+})();
+</script>
+<button id="chat-btn" aria-label="Open support chat">💬</button>
+<div id="chat" role="dialog" aria-label="TUMU support chat">
+ <header>🐶 TUMU Support <button id="chat-x" aria-label="Close">×</button></header>
+ <div id="msgs"></div>
+ <div id="chips"></div>
+ <form id="chatform"><input id="chatin" placeholder="Ask about $TUMU..." autocomplete="off"><button>Send</button></form>
+</div>
+<script>
+(function(){
+var FAQ=[
+ {k:['reward','prize','win','usdc','campaign'],a:'Launch Reward Campaign: ranks 1–10 can get 100 USDC and ranks 11–100 can get 25 USDC. Final rules, dates and verification will be published before launch.'},
+ {k:['minimum','min','25','how much','qualify','buy'],a:'The minimum qualifying purchase is 25 USDC worth of $TUMU, bought through the official token page only.'},
+ {k:['pair','sol','usdc pair','trade'],a:'The trading pair is SOL on the Solana network.'},
+ {k:['contract','mint','address','ca'],a:'The official contract/mint address is not live yet. It will be posted here and on our official X account at launch. Never trust an address from anyone else.'},
+ {k:['pump','where to buy','launch','when'],a:'The Pump.fun link is coming soon. Status: preparing launch. Follow our X for the launch announcement.'},
+ {k:['tiktok','x ','twitter','social','follow'],a:'Official accounts: X @TUMUDOG1 and TikTok @tumu_japanfood. Links are in the Follow TUMU section.'},
+ {k:['verify','form','wallet','submit'],a:'The reward form is not live yet. When it opens you will submit your wallet and transaction details. We will NEVER ask for your seed phrase or private key.'},
+ {k:['seed','private','phrase','scam','safe','dm'],a:'Warning: never share your seed phrase or private key with anyone. Admins will never DM you first asking for funds. Only trust links on this site and our official X.'},
+ {k:['profit','price','moon','invest','financial'],a:'$TUMU is a meme coin, not financial advice. Prices can go to zero. Only spend what you can afford to lose.'},
+ {k:['privacy','data'],a:'See our Privacy Policy at privacy.html (link in the footer).'},
+ {k:['hi','hello','hey','salam','assalam'],a:'Hi! 🐶 I am the TUMU helper. Ask me about rewards, the minimum buy, the pair, or our official links.'}
+];
+var chat=document.getElementById('chat'),msgs=document.getElementById('msgs'),inp=document.getElementById('chatin'),chips=document.getElementById('chips');
+function add(t,c){var d=document.createElement('div');d.className='m '+c;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function answer(q){q=' '+q.toLowerCase()+' ';var best=null,sc=0;FAQ.forEach(function(f){var n=0;f.k.forEach(function(w){if(q.indexOf(w)>-1)n++});if(n>sc){sc=n;best=f}});
+ return best?best.a:'I am an automated helper and do not have an answer for that. Please message our team on X: https://x.com/TUMUDOG1'}
+function ask(q){if(!q.trim())return;add(q,'me');setTimeout(function(){add(answer(q),'bot')},250)}
+['Rewards','Minimum buy','Contract address','Official links'].forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){ask(t)};chips.appendChild(b)});
+document.getElementById('chat-btn').onclick=function(){chat.classList.toggle('open');if(!msgs.children.length)add('Hi! 🐶 I am the TUMU helper (automated). How can I help?','bot')};
+document.getElementById('chat-x').onclick=function(){chat.classList.remove('open')};
+document.getElementById('chatform').onsubmit=function(e){e.preventDefault();ask(inp.value);inp.value=''};
+})();
+</script>
 </body>
 </html>
